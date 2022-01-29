@@ -65,15 +65,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     print(theData);
                   });
                 },
-                // done: Container(
-                //   decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.circular(10),
-                //       color: Colors.greenAccent),
-                //   child: Text(
-                //     'get start',
-                //     style: TextStyle(color: Colors.black),
-                //   ),
-                // ),
+
                 skip: const Text('skip'),
                 showNextButton: false,
                 // next: const Text('next'),
