@@ -31,12 +31,12 @@ class _OnBoardingState extends State<OnBoarding> {
               )),
           Center(
             child: Container(
-              height: 250,
+              height: 280,
               width: 250,
               child: IntroductionScreen(
                 globalBackgroundColor: Colors.white70,
-                // dotsDecorator: DotsDecorator(
-                //     color: Colors.transparent, activeColor: Colors.transparent),
+                dotsDecorator:
+                    const DotsDecorator(activeColor: Color(0xFF8B9A46)),
                 pages: [
                   PageViewModel(
                     title: 'reveal your pain',
@@ -49,22 +49,24 @@ class _OnBoardingState extends State<OnBoarding> {
                             MaterialStateProperty.all<Color>(Color(0xFF519259)),
                       ),
                       child: Text('get start'),
-                      onPressed: () {},
+                      onPressed: () {
+                        navigateTo(context, IBSFoodMap());
+                      },
                     ),
                     title: 'reveal your pain',
                     body: 'Having nutritionally checked food for no more pain ',
                   ),
                 ],
                 showDoneButton: false,
-                onDone: () {
-                  // Navigator.push(
-                  //     context, MaterialPageRoute(builder: (context) => IBSFoodMap()));
-                  navigateTo(context, IBSFoodMap());
-                  DioHelper.getData(myUrl: 'food').then((value) {
-                    theData = value.a;
-                    print(theData);
-                  });
-                },
+                // onDone: () {
+                //   // Navigator.push(
+                //   //     context, MaterialPageRoute(builder: (context) => IBSFoodMap()));
+
+                //   DioHelper.getData(myUrl: 'food').then((value) {
+                //     theData = value.a;
+                //     print(theData);
+                //   });
+                // },
 
                 skip: const Text('skip'),
                 showNextButton: false,

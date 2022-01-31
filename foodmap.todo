@@ -39,10 +39,30 @@
             "key": 1643448915551,
             "children": [
               {
+                "key": 1643623664715,
+                "children": [],
+                "todo": {
+                  "content": "create catchy app bar",
+                  "id": 1643623664715,
+                  "level": "warning",
+                  "done": false
+                }
+              },
+              {
+                "key": 1643623718054,
+                "children": [],
+                "todo": {
+                  "content": "create active category buttons down the app bar",
+                  "id": 1643623718054,
+                  "level": "default",
+                  "done": false
+                }
+              },
+              {
                 "key": 1643456692177,
                 "children": [],
                 "todo": {
-                  "content": "display the data",
+                  "content": "display the data in cards with its own image",
                   "id": 1643456692177,
                   "level": "default",
                   "done": false
@@ -98,7 +118,8 @@
     "expandKeys": [
       1643448680875,
       1643456294706,
-      1643448915551
+      1643448915551,
+      1643623718054
     ],
     "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L26"
   }

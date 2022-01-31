@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomeGridViewUnit extends StatelessWidget {
-  const HomeGridViewUnit({Key? key}) : super(key: key);
+class MainGridViewCell extends StatelessWidget {
+  const MainGridViewCell({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
