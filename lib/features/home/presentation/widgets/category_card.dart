@@ -1,30 +1,50 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CategoryCell extends StatelessWidget {
+class CategoryCell extends StatefulWidget {
   String image;
   String label;
-  CategoryCell({required this.image, required this.label});
+
+  CategoryCell({
+    required this.image,
+    required this.label,
+  });
+
+  @override
+  State<CategoryCell> createState() => _CategoryCellState();
+}
+
+class _CategoryCellState extends State<CategoryCell> {
+  bool selected = false;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        setState(() {
+          selected = !selected;
+        });
+      },
       child: Card(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(18))),
+        shape: selected == false
+            ? const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(18)),
+                side: BorderSide.none)
+            : const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(18)),
+                side: BorderSide(color: Color(0xFF4E9F3D), width: 2)),
         elevation: 5,
         child: Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           width: 75,
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Expanded(
               child: Image(
-                image: AssetImage(image),
+                image: AssetImage(widget.image),
               ),
             ),
             Text(
-              label,
+              widget.label,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,
             )

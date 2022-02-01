@@ -1,8 +1,9 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/notification_screen.dart';
+import 'package:ibs_food_map/features/home/presentation/widgets/Main_drawer.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
-
-import '../pages/search.dart';
 
 class MainAppBar extends StatelessWidget {
   const MainAppBar({
@@ -16,7 +17,9 @@ class MainAppBar extends StatelessWidget {
       elevation: 0,
       // centerTitle: true,
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          navigateTo(context, MainDrawer());
+        },
         icon: const Icon(
           Icons.menu,
           size: 26,
@@ -49,6 +52,28 @@ class MainAppBar extends StatelessWidget {
           color: Colors.white,
         )
       ],
+      bottom: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        backgroundColor: const Color(0xFFA9DB4D),
+        title: Container(
+          height: 40,
+          clipBehavior: Clip.hardEdge,
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
+          child: const TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              border: InputBorder.none,
+              hintText: 'Search...',
+              prefixIcon: Icon(
+                Icons.search,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

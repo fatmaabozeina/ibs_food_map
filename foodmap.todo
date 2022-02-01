@@ -24,7 +24,7 @@
                   "content": "catchy image for boarding",
                   "id": 1643456509113,
                   "level": "default",
-                  "done": false
+                  "done": true
                 }
               }
             ],
@@ -32,7 +32,7 @@
               "content": "boarding screen",
               "id": 1643456294706,
               "level": "default",
-              "done": false
+              "done": true
             }
           },
           {
@@ -40,30 +40,104 @@
             "children": [
               {
                 "key": 1643623664715,
-                "children": [],
+                "children": [
+                  {
+                    "key": 1643712835379,
+                    "children": [
+                      {
+                        "key": 1643712889325,
+                        "children": [],
+                        "todo": {
+                          "content": "action of notification button",
+                          "id": 1643712889325,
+                          "level": "success",
+                          "done": false
+                        }
+                      }
+                    ],
+                    "todo": {
+                      "content": "notification button",
+                      "id": 1643712835379,
+                      "level": "default",
+                      "done": true
+                    }
+                  },
+                  {
+                    "key": 1643712808549,
+                    "children": [
+                      {
+                        "key": 1643712920621,
+                        "children": [],
+                        "todo": {
+                          "content": "active textfield, get data for search",
+                          "id": 1643712920621,
+                          "level": "success",
+                          "done": false
+                        }
+                      }
+                    ],
+                    "todo": {
+                      "content": "search text field",
+                      "id": 1643712808549,
+                      "level": "default",
+                      "done": true
+                    }
+                  },
+                  {
+                    "key": 1643712859535,
+                    "children": [],
+                    "todo": {
+                      "content": "create drawer menu",
+                      "id": 1643712859535,
+                      "level": "warning",
+                      "done": false
+                    }
+                  }
+                ],
                 "todo": {
                   "content": "create catchy app bar",
                   "id": 1643623664715,
                   "level": "warning",
-                  "done": false
+                  "done": true
                 }
               },
               {
                 "key": 1643623718054,
-                "children": [],
+                "children": [
+                  {
+                    "key": 1643712599948,
+                    "children": [],
+                    "todo": {
+                      "content": "add image, text for category buttton",
+                      "id": 1643712599948,
+                      "level": "default",
+                      "done": true
+                    }
+                  },
+                  {
+                    "key": 1643712647361,
+                    "children": [],
+                    "todo": {
+                      "content": "scrollable category buttons",
+                      "id": 1643712647361,
+                      "level": "default",
+                      "done": true
+                    }
+                  },
+                  {
+                    "key": 1643712670960,
+                    "children": [],
+                    "todo": {
+                      "content": "if category button is pressed, change border color, load data for category",
+                      "id": 1643712670960,
+                      "level": "danger",
+                      "done": false
+                    }
+                  }
+                ],
                 "todo": {
-                  "content": "create active category buttons down the app bar",
+                  "content": "category buttons down the app bar",
                   "id": 1643623718054,
-                  "level": "default",
-                  "done": false
-                }
-              },
-              {
-                "key": 1643456692177,
-                "children": [],
-                "todo": {
-                  "content": "display the data in cards with its own image",
-                  "id": 1643456692177,
                   "level": "default",
                   "done": false
                 }
@@ -80,12 +154,33 @@
               },
               {
                 "key": 1643456590717,
-                "children": [],
+                "children": [
+                  {
+                    "key": 1643456692177,
+                    "children": [],
+                    "todo": {
+                      "content": "grid view cell design",
+                      "id": 1643456692177,
+                      "level": "default",
+                      "done": false
+                    }
+                  },
+                  {
+                    "key": 1643713005484,
+                    "children": [],
+                    "todo": {
+                      "content": "display data from mockup server",
+                      "id": 1643713005484,
+                      "level": "default",
+                      "done": false
+                    }
+                  }
+                ],
                 "todo": {
                   "content": "grid view",
                   "id": 1643456590717,
                   "level": "default",
-                  "done": true
+                  "done": false
                 }
               },
               {
@@ -119,8 +214,13 @@
       1643448680875,
       1643456294706,
       1643448915551,
-      1643623718054
+      1643623718054,
+      1643623664715,
+      1643712808549,
+      1643712835379,
+      1643456590717
     ],
-    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L26"
+    "schema": "https://github.com/Saber2pr/vsc-ext-todolist/blob/master/src/api/type.ts#L26",
+    "add_mode": "bottom"
   }
 }
