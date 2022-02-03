@@ -66,7 +66,7 @@ class MainAppBar extends StatelessWidget {
                     onPressed: () {
                       this.controller.text = "";
                     },
-                    icon: Icon(Icons.clear_all))),
+                    icon: Icon(Icons.clear))),
           ),
         ),
       ),
