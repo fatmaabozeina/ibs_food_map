@@ -15,7 +15,6 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingState extends State<OnBoarding> {
-  List<A>? theData = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,12 +60,6 @@ class _OnBoardingState extends State<OnBoarding> {
                 // onDone: () {
                 //   // Navigator.push(
                 //   //     context, MaterialPageRoute(builder: (context) => IBSFoodMap()));
-
-                //   DioHelper.getData(myUrl: 'food').then((value) {
-                //     theData = value.a;
-                //     print(theData);
-                //   });
-                // },
 
                 skip: const Text('skip'),
                 showNextButton: false,

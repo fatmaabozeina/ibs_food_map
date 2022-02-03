@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ibs_food_map/features/home/presentation/cubit/food_map_cubit.dart';
 
 class CategoryCell extends StatefulWidget {
   String image;
@@ -16,13 +17,14 @@ class CategoryCell extends StatefulWidget {
 
 class _CategoryCellState extends State<CategoryCell> {
   bool selected = false;
-
+  FoodMapCubit cubit = FoodMapCubit();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         setState(() {
           selected = !selected;
+          cubit.getFruits();
         });
       },
       child: Card(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/dio_helper.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/food_map.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/on_boarding.dart';
 
 void main() {
@@ -14,8 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: OnBoarding(),
-    );
+        debugShowCheckedModeBanner: false, home: IBSFoodMap() //OnBoarding(),
+        );
   }
 }

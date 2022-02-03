@@ -6,26 +6,17 @@ import 'package:ibs_food_map/features/home/presentation/widgets/Main_drawer.dart
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 
 class MainAppBar extends StatelessWidget {
-  const MainAppBar({
+  MainAppBar({
     Key? key,
   }) : super(key: key);
+
+  var controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: const Color(0xFFA9DB4D),
       elevation: 0,
-      // centerTitle: true,
-      leading: IconButton(
-        onPressed: () {
-          navigateTo(context, MainDrawer());
-        },
-        icon: const Icon(
-          Icons.menu,
-          size: 26,
-          color: Colors.white,
-        ),
-      ),
       title: RichText(
         text: const TextSpan(
           text: 'Food ',
@@ -61,16 +52,21 @@ class MainAppBar extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           padding: const EdgeInsets.only(left: 10, right: 10),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
-          child: const TextField(
+          child: TextField(
+            controller: controller,
             decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.white,
-              border: InputBorder.none,
-              hintText: 'Search...',
-              prefixIcon: Icon(
-                Icons.search,
-              ),
-            ),
+                filled: true,
+                fillColor: Colors.white,
+                border: InputBorder.none,
+                hintText: 'Search...',
+                prefixIcon: Icon(
+                  Icons.search,
+                ),
+                suffixIcon: IconButton(
+                    onPressed: () {
+                      this.controller.text = "";
+                    },
+                    icon: Icon(Icons.clear_all))),
           ),
         ),
       ),

@@ -6,8 +6,11 @@ import 'package:ibs_food_map/features/home/presentation/cubit/foodmap_state.dart
 
 import 'package:ibs_food_map/features/home/presentation/widgets/category_list.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/Main_drawer.dart';
+import 'package:ibs_food_map/features/home/presentation/widgets/content_sized_item.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/main_gridview_cell.dart';
 
+import '../../../../data_model.dart';
+import '../../../../dio_helper.dart';
 import '../widgets/main_app_bar.dart';
 
 class IBSFoodMap extends StatefulWidget {
@@ -18,16 +21,22 @@ class IBSFoodMap extends StatefulWidget {
 }
 
 class _IBSFoodMapState extends State<IBSFoodMap> {
+  FoodMapCubit cubit = FoodMapCubit();
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => FoodMapCubit(),
+      create: (BuildContext context) => cubit..getFruits(),
       child: BlocConsumer<FoodMapCubit, FoodMapStates>(
         listener: (context, state) {},
         builder: (context, state) {
+          if (state is GetFruitsDataSuccefulState) {
+            print('nice fruits');
+          } else {
+            print('couldnt get fruits');
+          }
           return Scaffold(
             backgroundColor: const Color(0xFFA9DB4D),
-            appBar: const PreferredSize(
+            appBar: PreferredSize(
                 preferredSize: Size.fromHeight(100), child: MainAppBar()),
             drawer: const MainDrawer(),
             body: Stack(
@@ -60,7 +69,7 @@ class _IBSFoodMapState extends State<IBSFoodMap> {
                           ),
                           Expanded(
                             child: GridView.builder(
-                              itemCount: 20,
+                              itemCount: cubit.fruitsList?.length,
                               gridDelegate:
                                   const SliverGridDelegateWithFixedCrossAxisCount(
                                       crossAxisCount: 3,
@@ -68,7 +77,11 @@ class _IBSFoodMapState extends State<IBSFoodMap> {
                                       crossAxisSpacing: 20,
                                       mainAxisSpacing: 20),
                               itemBuilder: (BuildContext context, int index) =>
-                                  const MainGridViewCell(),
+                                  MainGridViewCell(
+                                imageUrl: cubit.fruitsList?[index].image,
+                                label: cubit.fruitsList?[index].name,
+                                rating: cubit.fruitsList?[index].rating,
+                              ),
                             ),
                           ),
                         ],

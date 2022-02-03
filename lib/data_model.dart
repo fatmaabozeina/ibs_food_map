@@ -1,4 +1,10 @@
+// To parse this JSON data, do
+//
+//     final foodMap = foodMapFromJson(jsonString);
+
 import 'dart:convert';
+
+import 'dart:ffi';
 
 FoodMap foodMapFromJson(String str) => FoodMap.fromJson(json.decode(str));
 
@@ -7,48 +13,50 @@ String foodMapToJson(FoodMap data) => json.encode(data.toJson());
 class FoodMap {
   FoodMap({
     this.status,
-    this.a,
+    this.fruits,
   });
 
   String? status;
-  List<A>? a;
+  List<Fruit>? fruits;
 
   factory FoodMap.fromJson(Map<String, dynamic> json) => FoodMap(
         status: json["status"] == null ? null : json["status"],
-        a: json["A"] == null
+        fruits: json["fruits"] == null
             ? null
-            : List<A>.from(json["A"].map((x) => A.fromJson(x))),
+            : List<Fruit>.from(json["fruits"].map((x) => Fruit.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "status": status == null ? null : status,
-        "A": a == null ? null : a,
+        // "fruits": fruits == null ? null : List<dynamic>.from(fruits.map((x) => x.toJson())),
+        "fruits": fruits == null ? null : fruits,
       };
 }
 
-class A {
-  A({
+class Fruit {
+  Fruit({
     this.name,
-    this.type,
-    this.color,
+    this.image,
+    this.rating,
+    this.ratingColor,
   });
 
   String? name;
-  String? type;
-  int? color;
+  String? image;
+  String? rating;
+  int? ratingColor;
 
-  factory A.fromJson(Map<String, dynamic> json) => A(
+  factory Fruit.fromJson(Map<String, dynamic> json) => Fruit(
         name: json["name"] == null ? null : json["name"],
-        type: json["type"] == null ? null : json["type"],
-        color: json["color"] == null ? null : json["color"],
+        image: json["image"] == null ? null : json["image"],
+        rating: json["rating"] == null ? null : json["rating"],
+        ratingColor: json["rating_color"] == null ? null : json["rating_color"],
       );
 
   Map<String, dynamic> toJson() => {
         "name": name == null ? null : name,
-        "type": type == null ? null : type,
-        "color": color == null ? null : color,
+        "image": image == null ? null : image,
+        "rating": rating == null ? null : rating,
+        "rating_color": ratingColor == null ? null : ratingColor,
       };
 }
-
-
-//List<dynamic>.from(a.map((x) => x.toJson()))
