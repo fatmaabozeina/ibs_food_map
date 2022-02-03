@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
+
 import 'package:ibs_food_map/data_model.dart';
 
 class DioHelper {
