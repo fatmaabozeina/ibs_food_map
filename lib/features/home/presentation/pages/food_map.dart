@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ibs_food_map/core/resources/images/images_path.dart';
 
 import 'package:ibs_food_map/features/home/presentation/cubit/food_map_cubit.dart';
 import 'package:ibs_food_map/features/home/presentation/cubit/foodmap_state.dart';
+import 'package:ibs_food_map/features/home/presentation/widgets/category_card.dart';
 
 import 'package:ibs_food_map/features/home/presentation/widgets/category_list.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/Main_drawer.dart';
-import 'package:ibs_food_map/features/home/presentation/widgets/content_sized_item.dart';
+import 'package:ibs_food_map/features/home/presentation/widgets/details_dialog.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/main_gridview_cell.dart';
 
 import '../../../../data_model.dart';
@@ -22,6 +24,26 @@ class IBSFoodMap extends StatefulWidget {
 
 class _IBSFoodMapState extends State<IBSFoodMap> {
   FoodMapCubit cubit = FoodMapCubit();
+  var selectedIndex = -1;
+  List<CategoryCard> categoryList = [];
+
+  List<_CategorieInfo> categoriesInfo = [
+    _CategorieInfo(label: 'Fruits', imagePath: ImagesPathts.fruitCategoryCell),
+    _CategorieInfo(
+        label: 'vegetable', imagePath: ImagesPathts.vegetableCategoryCell),
+    _CategorieInfo(
+        label: 'cereals', imagePath: ImagesPathts.cerealCategoryCell),
+    _CategorieInfo(
+        label: 'condiments', imagePath: ImagesPathts.condimentCategoryCell),
+    _CategorieInfo(label: 'nuts', imagePath: ImagesPathts.nutsCategoryCell)
+  ];
+
+  void onCategoryCardTap(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -77,10 +99,19 @@ class _IBSFoodMapState extends State<IBSFoodMap> {
                                       crossAxisSpacing: 20,
                                       mainAxisSpacing: 20),
                               itemBuilder: (BuildContext context, int index) =>
-                                  MainGridViewCell(
-                                imageUrl: cubit.fruitsList?[index].image,
-                                label: cubit.fruitsList?[index].name,
-                                rating: cubit.fruitsList?[index].rating,
+                                  GestureDetector(
+                                onTap: () {
+                                  showDialog<String>(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        DetailsDialog(),
+                                  );
+                                },
+                                child: MainGridViewCell(
+                                  imageUrl: cubit.fruitsList?[index].image,
+                                  label: cubit.fruitsList?[index].name,
+                                  rating: cubit.fruitsList?[index].rating,
+                                ),
                               ),
                             ),
                           ),
@@ -94,14 +125,21 @@ class _IBSFoodMapState extends State<IBSFoodMap> {
                   alignment: AlignmentDirectional.center,
                   height: 80,
                   width: double.infinity,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: categoryList,
-                    ),
+                  child: Container(
+                    height: 70,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: this.categoriesInfo.length,
+                        itemBuilder: ((context, index) {
+                          return CategoryCard(
+                              selected: selectedIndex == index,
+                              label: this.categoriesInfo[index].label,
+                              image: this.categoriesInfo[index].imagePath,
+                              index: index,
+                              onTap: onCategoryCardTap);
+                        })),
                   ),
-                )
+                ),
               ],
             ),
           );
@@ -109,4 +147,10 @@ class _IBSFoodMapState extends State<IBSFoodMap> {
       ),
     );
   }
+}
+
+class _CategorieInfo {
+  final String label;
+  final String imagePath;
+  _CategorieInfo({required this.label, required this.imagePath});
 }

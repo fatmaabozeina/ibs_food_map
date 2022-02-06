@@ -2,33 +2,34 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/features/home/presentation/cubit/food_map_cubit.dart';
 
-class CategoryCell extends StatefulWidget {
+class CategoryCard extends StatefulWidget {
   String image;
   String label;
-
-  CategoryCell({
+  int index;
+  Function(int) onTap;
+  bool selected;
+  CategoryCard({
     required this.image,
     required this.label,
+    required this.index,
+    required this.onTap,
+    required this.selected,
   });
 
   @override
-  State<CategoryCell> createState() => _CategoryCellState();
+  State<CategoryCard> createState() => _CategoryCardState();
 }
 
-class _CategoryCellState extends State<CategoryCell> {
-  bool selected = false;
+class _CategoryCardState extends State<CategoryCard> {
   FoodMapCubit cubit = FoodMapCubit();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        setState(() {
-          selected = !selected;
-          cubit.getFruits();
-        });
+        widget.onTap(widget.index);
       },
       child: Card(
-        shape: selected == false
+        shape: widget.selected == false
             ? const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(18)),
                 side: BorderSide.none)
