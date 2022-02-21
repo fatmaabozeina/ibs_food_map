@@ -15,14 +15,14 @@ import '../../../../data_model.dart';
 import '../../../../dio_helper.dart';
 import '../widgets/main_app_bar.dart';
 
-class IBSFoodMap extends StatefulWidget {
-  IBSFoodMap({Key? key}) : super(key: key);
+class IBSFoodGuide extends StatefulWidget {
+  IBSFoodGuide({Key? key}) : super(key: key);
 
   @override
-  _IBSFoodMapState createState() => _IBSFoodMapState();
+  _IBSFoodGuideState createState() => _IBSFoodGuideState();
 }
 
-class _IBSFoodMapState extends State<IBSFoodMap> {
+class _IBSFoodGuideState extends State<IBSFoodGuide> {
   FoodMapCubit cubit = FoodMapCubit();
   var selectedIndex = -1;
   List<CategoryCard> categoryList = [];

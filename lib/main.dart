@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/dio_helper.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/food_map.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/about_fodmaps.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/home_page.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/on_boarding.dart';
 

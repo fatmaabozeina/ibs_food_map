@@ -1,0 +1,116 @@
+import 'package:flutter/material.dart';
+import 'package:ibs_food_map/core/resources/images/images_path.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/about_fodmaps.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/on_boarding.dart';
+import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
+
+class StartFODMAPs extends StatefulWidget {
+  StartFODMAPs({Key? key}) : super(key: key);
+
+  @override
+  State<StartFODMAPs> createState() => _StartFODMAPsState();
+}
+
+class _StartFODMAPsState extends State<StartFODMAPs> {
+  List<Widget> widgets = [
+    AboutFODMAPs(),
+    OnBoarding(),
+    OnBoarding(),
+    OnBoarding(),
+    OnBoarding()
+  ];
+  List<AboutCategory> aboutCategoryList = [
+    AboutCategory(
+      label: 'About FODMAPs',
+      image: ImagesPathts.aboutFODMAPs,
+    ),
+    AboutCategory(
+      label: 'FODMAPs and IBS',
+      image: ImagesPathts.iBS,
+    ),
+    AboutCategory(
+      label: 'Step 1: Low FODMAP Diet',
+      image: ImagesPathts.lowFODMAPS,
+    ),
+    AboutCategory(
+      label: 'Step 2: Reintroduction',
+      image: ImagesPathts.reIntroduction,
+    ),
+    AboutCategory(
+      label: 'Step 3: Personalization',
+      image: ImagesPathts.personalization,
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          backgroundColor: Color(0xFFDBE9B7),
+          // backgroundColor: Color(0xFFCEE5D0),
+          // backgroundColor: Color(0xFFC6D57E),
+          forceElevated: true,
+          elevation: 5,
+          title: Text(
+            'How To Start The Diet',
+            style: TextStyle(color: Color(0xFF127C56)),
+          ),
+          floating: true,
+          // centerTitle: true,
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+              (context, index) => GestureDetector(
+                    onTap: () {
+                      navigateTo(context, widgets[index]);
+                    },
+                    child: Container(
+                      color: Color(0xFFDBE9B7),
+                      height: 150,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          CircleAvatar(
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              child: Image.asset(
+                                aboutCategoryList[index].image,
+                                fit: BoxFit.scaleDown,
+                              ),
+                            ),
+                            radius: 40,
+                            backgroundColor: Colors.white,
+                            // backgroundImage: AssetImage(
+
+                            // ),
+                          ),
+                          Text(
+                            aboutCategoryList[index].label,
+                            style: TextStyle(
+                                fontSize: 18, color: Color(0xFF184D47)),
+                          ),
+                          Container(
+                            height: 2,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+              childCount: aboutCategoryList.length),
+        )
+      ],
+    ));
+  }
+}
+
+class AboutCategory {
+  var image;
+  var label;
+
+  AboutCategory({required this.label, required this.image});
+}

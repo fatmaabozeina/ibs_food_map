@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
 import 'package:ibs_food_map/data_model.dart';
 import 'package:ibs_food_map/dio_helper.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/food_map.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -49,7 +49,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       ),
                       child: Text('get start'),
                       onPressed: () {
-                        navigateTo(context, IBSFoodMap());
+                        navigateTo(context, IBSFoodGuide());
                       },
                     ),
                     title: 'reveal your pain',

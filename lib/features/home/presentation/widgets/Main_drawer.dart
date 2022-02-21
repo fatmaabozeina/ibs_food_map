@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ibs_food_map/core/resources/images/images_path.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/about_fodmaps.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/start_fodmaps.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
+import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -14,40 +19,80 @@ class MainDrawer extends StatelessWidget {
             bottomRight: Radius.circular(250.0),
           )),
       child: Drawer(
-        backgroundColor: Colors.white60,
+        // backgroundColor: Colors.white60,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             Container(
-              height: 100,
-              width: 50,
-              child: const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Color(0xFFDAD992),
-                ),
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  'drawer header',
-                  style: TextStyle(color: Colors.black, fontSize: 16),
-                ),
-              ),
+              color: Colors.white,
+              height: 150,
+              child: DrawerHeader(
+                  child: Image(
+                image: AssetImage(ImagesPathts.drawerHeader),
+                fit: BoxFit.cover,
+              )),
             ),
-            const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: ListTile(
-                title: Text(
-                  'setting',
-                  style: TextStyle(fontSize: 20, color: Color(0xFF1E6F5C)),
-                ),
-                leading: Icon(
-                  Icons.settings,
-                  size: 30,
-                ),
-              ),
+            DrawerCategory(
+              label: 'FoodGuide',
+              image: ImagesPathts.drawerFoodGuide,
+              onPressed: () {
+                navigateTo(context, IBSFoodGuide());
+              },
+            ),
+            DrawerCategory(
+              label: 'About FODMAPs',
+              image: ImagesPathts.drawerAboutFoodMab,
+              onPressed: () {
+                navigateTo(context, StartFODMAPs());
+              },
+            ),
+            DrawerCategory(
+              label: 'Recipes',
+              image: ImagesPathts.drawerRecipes,
+              onPressed: () {},
+            ),
+            DrawerCategory(
+              label: 'Dietitian',
+              image: ImagesPathts.drawerdietitian,
+              onPressed: () {},
+            ),
+            DrawerCategory(
+              label: 'Diary',
+              image: ImagesPathts.drawerDiary,
+              onPressed: () {},
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class DrawerCategory extends StatelessWidget {
+  final label;
+  final image;
+  var onPressed;
+  DrawerCategory(
+      {required this.label, required this.image, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 3),
+      color: Colors.white38,
+      child: ListTile(
+          onTap: onPressed,
+          title: Text(
+            label,
+            style: TextStyle(fontSize: 15, color: Color(0xFF1E6F5C)),
+          ),
+          leading: Container(
+            width: 40,
+            height: 40,
+            child: Image(
+              image: AssetImage(image),
+            ),
+          )),
     );
   }
 }

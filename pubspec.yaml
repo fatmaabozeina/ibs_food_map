@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  equatable: ^2.0.3
   bloc: ^8.0.2
   cupertino_icons: ^1.0.2
   dio: ^4.0.4
@@ -58,6 +59,22 @@ flutter:
     - lib/core/resources/images/carrot.png
     - lib/core/resources/images/cereal.png
     - lib/core/resources/images/nut.png
+    - lib/core/resources/images/menu.png
+    - lib/core/resources/images/question.png
+    - lib/core/resources/images/nutritionist.png
+    - lib/core/resources/images/recipe.png
+    - lib/core/resources/images/journal.png
+    - lib/core/resources/images/healthydigestion.png
+    - lib/core/resources/images/magnifying.png
+    - lib/core/resources/images/colon3.png
+    - lib/core/resources/images/lemon.png
+    - lib/core/resources/images/reintroduction.png
+    - lib/core/resources/images/person.png
+    - lib/core/resources/images/fermentable1.png
+    - lib/core/resources/images/onion (1).png
+    - lib/core/resources/images/disaccharides.png
+    - lib/core/resources/images/monosaccharides.png
+    - lib/core/resources/images/sweetener.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
