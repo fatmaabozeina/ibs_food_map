@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/dio_helper.dart';
 
-import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/FODMAPs_guide.dart';
 
-import 'package:ibs_food_map/features/home/presentation/pages/on_boarding.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/boarding_screen/boarding_screen.dart';
 
 void main() {
   DioHelper.init();
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: OnBoarding() //OnBoarding() //OnBoarding(),
+        home: BoardingScreen() //OnBoarding() //OnBoarding(),
         );
   }
 }

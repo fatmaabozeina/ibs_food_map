@@ -6,23 +6,20 @@ import 'package:ibs_food_map/features/home/presentation/cubit/food_map_cubit.dar
 import 'package:ibs_food_map/features/home/presentation/cubit/foodmap_state.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/category_card.dart';
 
-import 'package:ibs_food_map/features/home/presentation/widgets/category_list.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/Main_drawer.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/details_dialog.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/main_gridview_cell.dart';
 
-import '../../../../data_model.dart';
-import '../../../../dio_helper.dart';
-import '../widgets/main_app_bar.dart';
+import '../../widgets/main_app_bar.dart';
 
-class IBSFoodGuide extends StatefulWidget {
-  IBSFoodGuide({Key? key}) : super(key: key);
+class FODMAPsGuide extends StatefulWidget {
+  FODMAPsGuide({Key? key}) : super(key: key);
 
   @override
-  _IBSFoodGuideState createState() => _IBSFoodGuideState();
+  _FODMAPsGuideState createState() => _FODMAPsGuideState();
 }
 
-class _IBSFoodGuideState extends State<IBSFoodGuide> {
+class _FODMAPsGuideState extends State<FODMAPsGuide> {
   FoodMapCubit cubit = FoodMapCubit();
   var selectedIndex = -1;
   List<CategoryCard> categoryList = [];

@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
-import 'package:ibs_food_map/data_model.dart';
-import 'package:ibs_food_map/dio_helper.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
+
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/FODMAPs_guide.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-class OnBoarding extends StatefulWidget {
-  OnBoarding({Key? key}) : super(key: key);
+class BoardingScreen extends StatefulWidget {
+  BoardingScreen({Key? key}) : super(key: key);
 
   @override
-  _OnBoardingState createState() => _OnBoardingState();
+  _BoardingScreenState createState() => _BoardingScreenState();
 }
 
-class _OnBoardingState extends State<OnBoarding> {
+class _BoardingScreenState extends State<BoardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +48,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       ),
                       child: Text('get start'),
                       onPressed: () {
-                        navigateTo(context, IBSFoodGuide());
+                        navigateTo(context, FODMAPsGuide());
                       },
                     ),
                     title: 'reveal your pain',

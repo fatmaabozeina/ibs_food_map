@@ -1,7 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/notification_screen.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/notification_screen.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/Main_drawer.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/page_view_model/view_model.dart';
+
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/page_view_model/view_model.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
 
 List<PageViewModelInputData> buildStep3PageViewModelsData() {

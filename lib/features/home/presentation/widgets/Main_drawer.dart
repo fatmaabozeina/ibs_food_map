@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
 
-import 'package:ibs_food_map/features/home/presentation/pages/start_fodmaps.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/about_FODMAPs.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/FODMAPs_guide.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -36,14 +36,14 @@ class MainDrawer extends StatelessWidget {
               label: 'FoodGuide',
               image: ImagesPathts.drawerFoodGuide,
               onPressed: () {
-                navigateTo(context, IBSFoodGuide());
+                navigateTo(context, FODMAPsGuide());
               },
             ),
             DrawerCategory(
               label: 'About FODMAPs',
               image: ImagesPathts.drawerAboutFoodMab,
               onPressed: () {
-                navigateTo(context, StartFODMAPs());
+                navigateTo(context, How2StartFODMAPs());
               },
             ),
             DrawerCategory(

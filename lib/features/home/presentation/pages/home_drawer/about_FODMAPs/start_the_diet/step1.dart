@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/page_view_model/FODMAPs_IBS_viewmodel.dart';
+
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/page_view_model/step1_view_model.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
 
-class FODMAPsAndIBS extends StatefulWidget {
-  const FODMAPsAndIBS({Key? key}) : super(key: key);
+class Step1 extends StatefulWidget {
+  Step1({Key? key}) : super(key: key);
 
   @override
-  State<FODMAPsAndIBS> createState() => _FODMAPsAndIBSState();
+  State<Step1> createState() => _Step1State();
 }
 
-class _FODMAPsAndIBSState extends State<FODMAPsAndIBS> {
+class _Step1State extends State<Step1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ class _FODMAPsAndIBSState extends State<FODMAPsAndIBS> {
       body: IntroductionScreen(
         globalBackgroundColor: Colors.white54,
         dotsDecorator: const DotsDecorator(activeColor: Color(0xFF8B9A46)),
-        pages: getFODMAPsAndIBSPagesViewModels(),
+        pages: getStep1PagesViewModels(),
         showDoneButton: false,
         skip: const Text('skip'),
         showNextButton: false,

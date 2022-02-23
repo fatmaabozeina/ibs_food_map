@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/start_the_diet/FODMAPs_IBS.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/start_the_diet/about_fodmaps.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/start_the_diet/step1.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/start_the_diet/step2.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/start_the_diet/step3.dart';
 
-import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/on_boarding.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/FODMAPs_IBS.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/about_fodmaps.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/step1.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/step2.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/step3.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/FODMAPs_guide.dart';
+
+import 'package:ibs_food_map/features/home/presentation/pages/boarding_screen/boarding_screen.dart';
+
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 
-class StartFODMAPs extends StatefulWidget {
-  StartFODMAPs({Key? key}) : super(key: key);
+class How2StartFODMAPs extends StatefulWidget {
+  How2StartFODMAPs({Key? key}) : super(key: key);
 
   @override
-  State<StartFODMAPs> createState() => _StartFODMAPsState();
+  State<How2StartFODMAPs> createState() => _How2StartFODMAPsState();
 }
 
-class _StartFODMAPsState extends State<StartFODMAPs> {
+class _How2StartFODMAPsState extends State<How2StartFODMAPs> {
   List<Widget> widgets = [
     AboutFODMAPs(),
     FODMAPsAndIBS(),

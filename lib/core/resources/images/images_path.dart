@@ -21,15 +21,22 @@ class ImagesPathts {
   static var lowFODMAPS = 'lib/core/resources/images/lemon.png';
   static var reIntroduction = 'lib/core/resources/images/reintroduction.png';
   static var personalization = 'lib/core/resources/images/person.png';
-  static var fermentation = 'lib/core/resources/images/fermentable1.png';
-  static var oligosaccharides = 'lib/core/resources/images/onion (1).png';
-  static var disaccharides = 'lib/core/resources/images/disaccharides.png';
-  static var monosaccharides = 'lib/core/resources/images/monosaccharides.png';
-  static var polyols = 'lib/core/resources/images/sweetener.png';
-  static var group = 'lib/core/resources/images/start_the_diet/group.png';
-  static var steps = 'lib/core/resources/images/start_the_diet/steps.png';
+  static var fermentation =
+      'lib/core/resources/images/about_FODMAPs/fermentable1.png';
+  static var oligosaccharides =
+      'lib/core/resources/images/about_FODMAPs/onion (1).png';
+
+  static var disaccharides =
+      'lib/core/resources/images/about_FODMAPs/disaccharides.png';
+  static var monosaccharides =
+      'lib/core/resources/images/about_FODMAPs/monosaccharides.png';
+  static var polyols = 'lib/core/resources/images/about_FODMAPs/sweetener.png';
+  static var group = 'lib/core/resources/images/FODMAPS_IBS/group.png';
+  static var steps = 'lib/core/resources/images/FODMAPS_IBS/steps.png';
+
   static var diagnosis = 'lib/core/resources/images/step_1/diagnosis.png';
   static var healthy = 'lib/core/resources/images/step_1/healthy.png';
+
   static var lowFodmaps =
       'lib/core/resources/images/step_1/low-performance.png';
   static var whyReintroduce =

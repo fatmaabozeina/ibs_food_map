@@ -71,13 +71,13 @@ flutter:
     - lib/core/resources/images/lemon.png
     - lib/core/resources/images/reintroduction.png
     - lib/core/resources/images/person.png
-    - lib/core/resources/images/fermentable1.png
-    - lib/core/resources/images/onion (1).png
-    - lib/core/resources/images/disaccharides.png
-    - lib/core/resources/images/monosaccharides.png
-    - lib/core/resources/images/sweetener.png
-    - lib/core/resources/images/start_the_diet/group.png
-    - lib/core/resources/images/start_the_diet/steps.png
+    - lib/core/resources/images/about_FODMAPs/fermentable1.png
+    - lib/core/resources/images/about_FODMAPs/onion (1).png
+    - lib/core/resources/images/about_FODMAPs/disaccharides.png
+    - lib/core/resources/images/about_FODMAPs/monosaccharides.png
+    - lib/core/resources/images/about_FODMAPs/sweetener.png
+    - lib/core/resources/images/FODMAPS_IBS/group.png
+    - lib/core/resources/images/FODMAPS_IBS/steps.png
     - lib/core/resources/images/step_1/diagnosis.png
     - lib/core/resources/images/step_1/low-performance.png
     - lib/core/resources/images/step_1/healthy.png

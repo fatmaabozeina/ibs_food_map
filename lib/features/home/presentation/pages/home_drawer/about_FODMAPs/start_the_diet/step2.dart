@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/page_view_model/step2_view_model.dart';
+
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/page_view_model/step2_view_model.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
 
 class Step2 extends StatefulWidget {

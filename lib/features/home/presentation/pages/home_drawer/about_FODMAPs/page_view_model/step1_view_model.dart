@@ -1,5 +1,7 @@
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/page_view_model/view_model.dart';
+
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/page_view_model/view_model.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
 
 List<PageViewModelInputData> buildStep1PageViewModelsData() {
@@ -12,7 +14,7 @@ List<PageViewModelInputData> buildStep1PageViewModelsData() {
       title: 'Step1 & low FODMAP diet',
       body:
           'The FODMAD diet involves swapping high FODMAP foods in your diet with similar low FODMAP alternatives to help reduce symptoms of IBS.',
-      imagePath: ImagesPathts.lowFODMAPS);
+      imagePath: ImagesPathts.lowFodmaps);
   var thirdPageViewModelData = PageViewModelInputData(
       title: 'What to eat?',
       body:
