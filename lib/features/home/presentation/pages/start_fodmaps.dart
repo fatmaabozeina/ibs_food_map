@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/about_fodmaps.dart';
+
 import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/on_boarding.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/FODMAPs_IBS.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/about_fodmaps.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/step1.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/step2.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/start_the_diet/step3.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 
 class StartFODMAPs extends StatefulWidget {
@@ -15,10 +20,10 @@ class StartFODMAPs extends StatefulWidget {
 class _StartFODMAPsState extends State<StartFODMAPs> {
   List<Widget> widgets = [
     AboutFODMAPs(),
-    OnBoarding(),
-    OnBoarding(),
-    OnBoarding(),
-    OnBoarding()
+    FODMAPsAndIBS(),
+    Step1(),
+    Step2(),
+    Step3()
   ];
   List<AboutCategory> aboutCategoryList = [
     AboutCategory(

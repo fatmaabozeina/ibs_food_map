@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
-import 'package:ibs_food_map/features/home/presentation/pages/about_fodmaps.dart';
+
 import 'package:ibs_food_map/features/home/presentation/pages/start_fodmaps.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/food_guide.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
