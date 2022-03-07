@@ -42,13 +42,6 @@ class MainGridViewCell extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                      const Text(
-                        'Rating:',
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15),
-                      ),
                       Expanded(
                           child: Text(rating ?? "",
                               style: TextStyle(color: Colors.red))),
