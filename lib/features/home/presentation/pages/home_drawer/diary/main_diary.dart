@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
@@ -69,6 +67,10 @@ class _MainDairyState extends State<MainDairy> {
         body: Padding(
           padding: const EdgeInsets.only(left: 10.0, right: 10),
           child: SfCalendar(
+            dataSource: IntervalDataSource(getCalendarDataSource()),
+            allowDragAndDrop: true,
+            allowAppointmentResize: true,
+
             view: CalendarView.week,
             showCurrentTimeIndicator: true,
             // cellBorderColor: Colors.transparent,
@@ -104,13 +106,27 @@ class _MainDairyState extends State<MainDairy> {
   }
 }
 
-// mixin Calendar {
-//   String getDay();
-// }
+class IntervalDataSource extends CalendarDataSource {
+  IntervalDataSource(List<Appointment> source) {
+    appointments = source;
+  }
+}
 
-// class A implements Calendar {
-//   @override
-//   String getDay() {
-//     return "Sun";
-//   }
-// }
+List<Appointment> getCalendarDataSource() {
+  List<Appointment> fodmapIntevel = [];
+  final DateTime today = DateTime.now();
+  final DateTime startTime =
+      DateTime(today.year, today.month, today.day, today.hour, today.minute);
+  final DateTime endTime = startTime.add(const Duration(
+    days: 2,
+  ));
+
+  fodmapIntevel.add(Appointment(
+      startTime: startTime,
+      endTime: endTime,
+      color: Colors.yellow,
+      subject: 'emenet NAme',
+      isAllDay: true));
+
+  return fodmapIntevel;
+}

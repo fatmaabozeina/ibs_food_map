@@ -37,13 +37,13 @@ dependencies:
   flutter_layout_grid: ^1.0.3
   introduction_screen: ^2.1.0
   syncfusion_flutter_calendar: ^19.4.54
+  url_launcher: ^6.0.20
+  whatsapp_unilink: ^2.0.1+1
 
 dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
-  
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

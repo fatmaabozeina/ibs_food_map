@@ -3,6 +3,7 @@ import 'package:ibs_food_map/core/resources/images/images_path.dart';
 
 import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/about_FODMAPs/about_FODMAPs.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/diary/main_diary.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/dietatry_contact/whatsapp.dart';
 import 'package:ibs_food_map/features/home/presentation/pages/home_guide/FODMAPs_guide.dart';
 import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
 
@@ -55,7 +56,9 @@ class MainDrawer extends StatelessWidget {
             DrawerCategory(
               label: 'Dietitian',
               image: ImagesPathts.drawerdietitian,
-              onPressed: () {},
+              onPressed: () {
+                launchWhatsApp();
+              },
             ),
             DrawerCategory(
               label: 'Diary',
