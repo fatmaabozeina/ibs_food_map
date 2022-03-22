@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:ibs_food_map/core/resources/images/images_path.dart';
+import 'package:ibs_food_map/features/home/presentation/common_widget/navigation.dart';
 
 import 'package:ibs_food_map/features/home/presentation/pages/home_guide/FODMAPs_guide.dart';
-import 'package:ibs_food_map/features/home/presentation/widgets/widgets.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
 
 class BoardingScreen extends StatefulWidget {

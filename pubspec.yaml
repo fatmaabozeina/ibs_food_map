@@ -35,7 +35,9 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_layout_grid: ^1.0.3
+  intl: ^0.17.0
   introduction_screen: ^2.1.0
+  sqflite: ^2.0.2
   syncfusion_flutter_calendar: ^19.4.54
   url_launcher: ^6.0.20
   whatsapp_unilink: ^2.0.1+1

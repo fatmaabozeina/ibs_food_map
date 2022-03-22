@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/diary/add_meal_dialog.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/diary/database/database.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_drawer/diary/widgets/appointment.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class MainDairy extends StatefulWidget {
@@ -10,6 +13,14 @@ class MainDairy extends StatefulWidget {
 }
 
 class _MainDairyState extends State<MainDairy> {
+  var elemetanamee = 'mariam';
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    createDatabase();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +65,12 @@ class _MainDairyState extends State<MainDairy> {
                               horizontal: 20,
                             ),
                             primary: Colors.white),
-                        onPressed: () {},
+                        onPressed: () {
+                          showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) =>
+                                  AddMeal(this.mealValue));
+                        },
                         child: Text(
                           'Add meal',
                         )),
@@ -67,7 +83,7 @@ class _MainDairyState extends State<MainDairy> {
         body: Padding(
           padding: const EdgeInsets.only(left: 10.0, right: 10),
           child: SfCalendar(
-            dataSource: IntervalDataSource(getCalendarDataSource()),
+            dataSource: IntervalDataSource(getCalendarDataSource(elemetanamee)),
             allowDragAndDrop: true,
             allowAppointmentResize: true,
 
@@ -104,29 +120,10 @@ class _MainDairyState extends State<MainDairy> {
           ),
         ));
   }
-}
 
-class IntervalDataSource extends CalendarDataSource {
-  IntervalDataSource(List<Appointment> source) {
-    appointments = source;
+  void mealValue(String meal) {
+    setState(() {
+      elemetanamee = meal;
+    });
   }
-}
-
-List<Appointment> getCalendarDataSource() {
-  List<Appointment> fodmapIntevel = [];
-  final DateTime today = DateTime.now();
-  final DateTime startTime =
-      DateTime(today.year, today.month, today.day, today.hour, today.minute);
-  final DateTime endTime = startTime.add(const Duration(
-    days: 2,
-  ));
-
-  fodmapIntevel.add(Appointment(
-      startTime: startTime,
-      endTime: endTime,
-      color: Colors.yellow,
-      subject: 'emenet NAme',
-      isAllDay: true));
-
-  return fodmapIntevel;
 }

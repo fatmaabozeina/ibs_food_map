@@ -4,13 +4,13 @@ import 'package:ibs_food_map/core/resources/images/images_path.dart';
 
 import 'package:ibs_food_map/features/home/presentation/cubit/food_map_cubit.dart';
 import 'package:ibs_food_map/features/home/presentation/cubit/foodmap_state.dart';
-import 'package:ibs_food_map/features/home/presentation/widgets/category_card.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/category_card.dart';
 
-import 'package:ibs_food_map/features/home/presentation/widgets/Main_drawer.dart';
-import 'package:ibs_food_map/features/home/presentation/widgets/details_dialog.dart';
-import 'package:ibs_food_map/features/home/presentation/widgets/main_gridview_cell.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/Main_drawer.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/details_dialog.dart';
+import 'package:ibs_food_map/features/home/presentation/pages/home_guide/main_gridview_cell.dart';
 
-import '../../widgets/main_app_bar.dart';
+import 'main_app_bar.dart';
 
 class FODMAPsGuide extends StatefulWidget {
   FODMAPsGuide({Key? key}) : super(key: key);
