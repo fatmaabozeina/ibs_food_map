@@ -5,10 +5,12 @@ class DefaultFormField extends StatelessWidget {
   final fieldController;
   final keyboard;
   final prefix;
+  final ontap;
   DefaultFormField(
       {required this.prefix,
       required this.keyboard,
       required this.hint,
+      this.ontap,
       required this.fieldController});
 
   // final TextEditingController fieldController;
@@ -18,6 +20,7 @@ class DefaultFormField extends StatelessWidget {
     return TextField(
       controller: fieldController,
       showCursor: true,
+      onTap: ontap,
       keyboardType: keyboard,
       decoration: InputDecoration(
           border:

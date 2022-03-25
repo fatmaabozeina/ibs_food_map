@@ -10,11 +10,8 @@ class IntervalDataSource extends CalendarDataSource {
 List<Appointment> getCalendarDataSource(String elementNmae) {
   List<Appointment> fodmapIntevel = [];
   final DateTime today = DateTime.now();
-  final DateTime startTime =
-      DateTime(today.year, today.month, today.day, today.hour, today.minute);
-  final DateTime endTime = startTime.add(const Duration(
-    days: 2,
-  ));
+  final DateTime startTime = DateTime(today.year, today.month, today.day, 9, 0);
+  final DateTime endTime = startTime.add(const Duration(hours: 3));
 
   fodmapIntevel.add(Appointment(
       startTime: startTime,

@@ -19,9 +19,9 @@ void createDatabase() async {
   });
 }
 
-Future insertToDatabase() async {
-  await database.transaction((txn) {
-    txn
+Future<dynamic> insertToDatabase() async {
+  await database.transaction((txn) async {
+    await txn
         .rawInsert(
             'INSERT INTO notes(title, date, time,status) VALUES("apple","today","currenttime","new")')
         .then((value) {
@@ -29,7 +29,6 @@ Future insertToDatabase() async {
     }).catchError(() {
       print('error while inserting data');
     });
-    return null;
   });
 }
 
